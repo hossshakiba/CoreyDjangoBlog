@@ -34,13 +34,16 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
-    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #third parties
+    'tinymce',
+    'crispy_forms',
+    #locals
 ]
 
 MIDDLEWARE = [
@@ -103,13 +106,42 @@ AUTH_PASSWORD_VALIDATORS = [
     # {
     #     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     # },
-    
+
     # customized validators just in case :
     # {'NAME': 'django_project.validators.NumberValidator'},
     # {'NAME': 'django_project.validators.UppercaseValidator'},
     # {'NAME': 'django_project.validators.LowercaseValidator'},
     # {'NAME': 'django_project.validators.SymbolValidator'},
 ]
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    
+    "height": "320px",
+    "width": "960px",
+    "menubar": "file edit insert format tools help",
+    "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code codesample",
+    # "fullscreen insertdatetime media table paste code help wordcount spellchecker",
+    "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft | codesample"
+    "aligncenter alignright alignjustify | codesample | outdent indent |  numlist bullist checklist | forecolor "
+    "backcolor casechange permanentpen removeformat | pagebreak | charmap emoticons | "
+    "fullscreen  preview save | insertfile image media pageembed template link "
+    "a11ycheck ltr rtl | showcomments addcomment code",
+    # "custom_undo_redo_levels": 10,
+    # "language": "es_ES",  # To force a specific language instead of the Django current language.
+}
+# TINYMCE_SPELLCHECKER = True
+# TINYMCE_COMPRESSOR = True
+# # TINYMCE_EXTRA_MEDIA = {
+# #     'css': {
+# #         'all': [
+# #             ...
+# #         ],
+# #     },
+# #     'js': [
+# #         ...
+# #     ],
+# # }
 
 
 # Internationalization
@@ -140,7 +172,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # !!! only while developement !!!
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
