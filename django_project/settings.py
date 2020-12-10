@@ -118,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 TINYMCE_DEFAULT_CONFIG = {
     
     "height": "320px",
-    "width": "960px",
+    "width": "700px",
     "menubar": "file edit insert format tools help",
     "plugins": "advlist autolink lists link image charmap print preview anchor searchreplace visualblocks code codesample",
     # "fullscreen insertdatetime media table paste code help wordcount spellchecker",
