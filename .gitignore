@@ -9,6 +9,7 @@ __pycache__/
 local_settings.py
 db.sqlite3-journal
 media
+db.sqlite3
 /blog/secrets.py
 .DS_Store
 .vscode
