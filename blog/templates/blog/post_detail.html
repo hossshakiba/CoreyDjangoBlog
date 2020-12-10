@@ -14,9 +14,7 @@
         {% endif %}
       </div>
       <h2 class="article-title">{{ object.title }}</h2>
-      {{form.media}}
       <p class="article-content">{{ object.content |safe }}</p>
-      {% comment %} <p> {{post.body |safe}}</p> {% endcomment %}
     </div>
   </article>
 {% endblock content %}
